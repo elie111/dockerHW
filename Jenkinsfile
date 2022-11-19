@@ -3,7 +3,7 @@ pipeline{
 	agent any
 
 	environment {
-		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
+		DOCKERHUB_CREDENTIALS=credentials('eliehadd')
 	}
 
 	stages {
@@ -18,7 +18,7 @@ pipeline{
 		stage('Build image') {
 
 			steps {
-				sh 'docker build -t salehtaha/docker-final-task:latest .'
+				sh 'docker build -t eliehadd/docker-final-task:latest .'
 			}
 		}
 
@@ -26,7 +26,7 @@ pipeline{
 		stage('Push to dockerhub') {
 
 			steps {
-				sh ' docker push salehtaha/docker-final-task'
+				sh ' docker push eliehadd/docker-final-task'
 			}
 		}
 	}
