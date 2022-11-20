@@ -26,7 +26,7 @@ pipeline{
 		stage('Push image') {
 
 			steps {
-				sh ' docker push eliehadd/dockerHW'
+				sh ' docker push eliehadd/dockerhw'
 			}
 		}
 stage('Slack Notifications') {
