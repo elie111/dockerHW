@@ -7,7 +7,7 @@
 
 #### **To run the project:**
 >1. Clone:
-git Clone https://github.com/elie111/JenkinsHW.git
+git Clone https://github.com/elie111/dockerHW.git
 
 > 2. Build:
 docker compose up
@@ -19,7 +19,7 @@ http://localhost:8000/
 docker compose down
 
 
-### **python Application**
+### **python web Application**
 *  I built a python web application that shows the live price of bitcoin in USD and the average price of the last ten minutes, I used flask framework and redis database here is an example of what we got:
 
 <p align="center" >
