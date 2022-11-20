@@ -18,7 +18,7 @@ pipeline{
 		stage('Build image') {
 
 			steps {
-				sh 'docker build -t eliehadd/docker-final-task:latest .'
+				sh 'docker build -t eliehadd/dockerhw:latest .'
 			}
 		}
 
