@@ -20,7 +20,7 @@ docker compose down
 
 
 ### **python Application**
-*  I build a python web application that shows the live price of bitcoin in USD and the average of the last ten minutes, I used flask framework and redis database here is an example of what we got:
+*  I built a python web application that shows the live price of bitcoin in USD and the average price of the last ten minutes, I used flask framework and redis database here is an example of what we got:
 
 <p align="center" >
   <img src="/Images/bitprice.png" alt="drawing" style="width:700px;"/>
