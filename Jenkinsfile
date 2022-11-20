@@ -1,6 +1,6 @@
 pipeline{
 
-	agent any
+	agent 'node-01'
 
 	environment {
 		DOCKERHUB_CREDENTIALS=credentials('docker')
@@ -8,7 +8,7 @@ pipeline{
 
 	stages {
 	
-		stage('Login to dockerhub') {
+		stage('Login') {
 
 			steps {
 				sh 'echo $DOCKERHUB_CREDENTIALS_PSW |  docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
@@ -23,12 +23,22 @@ pipeline{
 		}
 
 
-		stage('Push to dockerhub') {
+		stage('Push image') {
 
 			steps {
 				sh ' docker push eliehadd/docker-final-task'
 			}
 		}
+stage('Slack Notifications') {
+            steps{
+                slackSend baseUrl: 'https://hooks.slack.com/services/',
+                channel: '#fursa-hw3',
+                color: 'good',
+                message: 'Image has been built and pushed to dockerhub',
+                teamDomain: 'fursaHW',
+                tokenCredentialId: 'slack-hw'
+            }
+        }
 	}
 
 	post {
