@@ -5,7 +5,12 @@ pipeline{
 	environment {
 		DOCKERHUB_CREDENTIALS=credentials('docker')
 	}
-
+	    stages {
+        stage('Clone') {
+            steps {
+                    git branch: "main",url:'https://github.com/elie111/dockerHW.git'
+            }
+        }
 	stages {
 	
 		stage('Login') {
