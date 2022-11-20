@@ -23,7 +23,7 @@ docker compose down
 *  I build a python web application that displays the live price of bitcoin in USD and the average of the last ten minutes, I used flask framework and redis database here is an example of what we got:
 
 <p align="center" >
-  <img src="/Images/newshtml.png" alt="drawing" style="width:700px;"/>
+  <img src="/Images/bitprice.png" alt="drawing" style="width:700px;"/>
 </p>
 
 
@@ -37,21 +37,24 @@ docker compose down
 </p>
 
   #### **clone Stage**:
-  > We cloned the project: git branch: "main",url:'https://github.com/elie111/JenkinsHW.git'
+  > We cloned the project: git branch: "main",url:'https://github.com/elie111/dockerHW.git'
   #### **Login Stage**:
-  > We cloned the project: git branch: "main",url:'https://github.com/elie111/JenkinsHW.git'
+  > We logged in to dockerhub'
   #### **Build image Stage**:
-  > We built the project using the command: mvn clean install assembly:single 
+  > We built the image: docker build -t eliehadd/dockerhw:latest . 
   #### **Push image Stage**:
-  > We archived the jar file: archiveArtifacts artifacts: '**/*.jar'
+  > We pushed the built image to dockerhub: docker push eliehadd/dockerhw
   #### **Post Actions Stage**:
-  >  We ran the jar file that was created from the building stage, which ran the server in the background: 
-  > java -jar target/simplehttpserver-1.0-SNAPSHOT-jar-with-dependencies.jar & 
+  > we logged out of dockerhub: docker logout
   #### **Slack Notification Stage**: 
-  > And finally we sent a message on a slack channel we created to inform us that the project has been built and deployed
+  > And finally we sent a message on a slack channel we created to inform us that the image has been built and pushed to dockerhub
 
 <p align="center" >
   <img src="/Images/slack.png" alt="drawing" style="width:700px;"/>
+</p>
+
+<p align="center" >
+  <img src="/Images/docker.png" alt="drawing" style="width:700px;"/>
 </p>
 
 <p align="center" >
