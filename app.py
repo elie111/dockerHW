@@ -2,6 +2,8 @@ import time
 import requests
 import redis
 from flask import Flask
+from flask import render_template
+
 
 app = Flask(__name__)
 
@@ -35,8 +37,10 @@ def get_hit_count():
             time.sleep(0.5)
 
 @app.route('/')
+@app.route('/index')
 def hello():
     count = get_hit_count()
     cache.set('price', pricedata['price'])
     cache.set('average', average)
-    return f"the live price of bitcoin is:  {pricedata['price']} and the average of the last 10 minutes is {average}"
+    # return f"the live price of bitcoin is:  {pricedata['price']} and the average of the last 10 minutes is {average}"
+    return render_template('design.html',title='Bitcoin Information', pricetitle='the live price of bitcoin is: ', price=str(pricedata['price'])+" $",averagetitle='the average price of bitcoin in the last 10 minutes is: ',averageprice=str(average)+" $")
