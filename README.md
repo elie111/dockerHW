@@ -1,4 +1,4 @@
- <h1 align="center">Fursa HW4 Docker Closing Task</h3>
+ <h1 align="center">Fursa HW4 Docker Final Task</h3>
   <h1 align="center">Elie Haddad</h3>
   
 <p align="center" >
@@ -7,7 +7,7 @@
 
 #### **To run the project:**
 >1. Clone:
-git Clone https://github.com/elie111/JenkinsHW.git
+git Clone https://github.com/elie111/dockerHW.git
 
 > 2. Build:
 docker compose up
@@ -15,12 +15,12 @@ docker compose up
 > 3. open:
 http://localhost:8000/
 
-> 3. stop:
+> 4. stop:
 docker compose down
 
 
-### **python Application**
-*  I build a python web application that displays the live price of bitcoin in USD and the average of the last ten minutes, I used flask framework and redis database here is an example of what we got:
+### **python web Application**
+*  I built a python web application that shows the live price of bitcoin in USD and the average price of the last ten minutes, I used flask framework and redis database here is an example of what we got:
 
 <p align="center" >
   <img src="/Images/bitprice.png" alt="drawing" style="width:700px;"/>
@@ -39,7 +39,7 @@ docker compose down
   #### **clone Stage**:
   > We cloned the project: git branch: "main",url:'https://github.com/elie111/dockerHW.git'
   #### **Login Stage**:
-  > We logged in to dockerhub'
+  > We logged in to dockerhub: echo $DOCKERHUB_CREDENTIALS_PSW |  docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
   #### **Build image Stage**:
   > We built the image: docker build -t eliehadd/dockerhw:latest . 
   #### **Push image Stage**:
